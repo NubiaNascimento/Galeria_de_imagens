@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1{
+    color: #06d1a5;
+    font-weight: bold;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+}
+header{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main{
+   
+    flex-grow: 1;
+}
+.slide{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -999;
+    opacity: 0;
+}
+.slide:target{
+    z-index: 999;
+    opacity: 1;
+    transition: all .4s linear;
+}
+.slide .imagem-container{
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    position: relative;
+   
+}
+.slide .imagem-container img{
+    width: 100%;
+    height: 100%;
+}
+.slide .fechar{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: black;
+    background-color:white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.0rem;
+    text-decoration: none;
+    z-index: 3;
+    transition: opacity .5s linear;
+}
+.slide .fechar:hover{
+
+}
+.slide .navegacao{
+    position: absolute;
+    width: 30px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: white;
+    background-color: #0005;
+    text-decoration: none;
+    opacity: 0;
+    transition: all .5s linear;
+}
+.slide .navegacao:hover{
+    opacity: 1;
+}
+
+.slide .anterior{
+    left: 0;
+}
+.slide .proximo{
+    right: 0;
+}
+footer{
+    
+    height: 50px;
+    text-align: center;
+    color: white;
+}
+.galeria-container{
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding: 0 15px;
+}
+.galeria-itens{
+    width: 340px;
+    height: 240px;
+    flex-grow: 1;
+    margin-left: 15px;
+    margin-top: 15px;
+    margin-right: 15px;
+    border: 5px solid white;
+    overflow: hidden;
+}
+.galeria-itens img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    filter: grayscale(100%);
+    transition: all 1s linear;
+}
+.galeria-itens img:hover{
+    filter: grayscale(0%);
+    transform: scale(130%);
+}
